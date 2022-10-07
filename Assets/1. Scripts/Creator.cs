@@ -77,6 +77,25 @@ public class Creator : MonoBehaviour
         }
     }
 
+    public void NeighbourCheck(Vector2Int position)
+    {
+    Cell cell = _cellsDictionary[position];
+        if (cell.IsOpened) return;
+        cell.Open();
+        if (cell.NeighbourBombs == 0)
+        {
+            for (int x = -1; x <= 1; x++)
+            {
+                for (int y = -1; y <= 1; y++)
+                {
+                    Vector2Int key = position + new Vector2Int(x, y);
+                    if (_cellsDictionary.ContainsKey(key))
+                        NeighbourCheck(key);
+                }
+            }
+        }
+    }
+
     private void Regenerate()
     {
         foreach (Cell cell in _cellsDictionary.Values)

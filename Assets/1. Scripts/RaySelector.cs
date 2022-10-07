@@ -3,12 +3,15 @@ using UnityEngine;
 public class RaySelector : MonoBehaviour
 {
     private Cell _currentCell;
+    [SerializeField] private Creator _creator;
 
     private void Update()
     {
         FlashCell();
         if (Input.GetMouseButtonDown(0))
-            _currentCell.Click();
+            _creator.NeighbourCheck(_currentCell.Position);
+        if (Input.GetMouseButtonDown(1))
+            _currentCell.SetFlag();
     }
 
     private void FlashCell()
