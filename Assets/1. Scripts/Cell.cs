@@ -10,6 +10,7 @@ public class Cell : MonoBehaviour
     [SerializeField] private Material _howeredMaterital;
     [SerializeField] private Material _defaultMaterital;
     [SerializeField] private Material _openedMaterital;
+    [SerializeField] private Color[] _textColor;
     private BoxCollider _cellCollider;
 
     //попробовать убрать этот паблик, перенести метод в этот класс
@@ -35,6 +36,7 @@ public class Cell : MonoBehaviour
     {
         if (_isBomb) return;
         NeighbourBombs++;
+        _numberBombText.color = _textColor[NeighbourBombs - 1];
         _numberBombText.text = NeighbourBombs.ToString();
     }
 
@@ -55,6 +57,7 @@ public class Cell : MonoBehaviour
         if (_isBomb)
         {
             _bombPrefab.SetActive(true);
+            EventManager.OnLose();
         }
         else
         {

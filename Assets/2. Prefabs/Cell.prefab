@@ -147,7 +147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6445126948948824481
 Transform:
   m_ObjectHideFlags: 0
@@ -268,7 +268,12 @@ MonoBehaviour:
   _howeredMaterital: {fileID: 2100000, guid: 34bffcb04cc279942b9cfb6682391e2b, type: 2}
   _defaultMaterital: {fileID: 2100000, guid: 36147790c099fa24cbec53b3d620dc7c, type: 2}
   _openedMaterital: {fileID: 2100000, guid: 508a50347a1385d4ca797e1a5e77f90b, type: 2}
-  IsFlag: 0
+  _textColor:
+  - {r: 0, g: 0, b: 0.6784314, a: 1}
+  - {r: 0, g: 0.31764707, b: 0, a: 1}
+  - {r: 0.9490197, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0.32156864, a: 0}
+  - {r: 0.32156864, g: 0, b: 0, a: 1}
 --- !u!65 &6570526311690588802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -299,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1918355062068796033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -340,7 +345,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -382,10 +387,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

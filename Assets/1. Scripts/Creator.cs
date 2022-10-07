@@ -7,6 +7,7 @@ public class Creator : MonoBehaviour
     [SerializeField] private Cell _cellPrefab;
     private int _gridSize = 10;
     private int _numberOfBombs = 10;
+    private int _openedCells;
     private Dictionary<Vector2Int, Cell> _cellsDictionary = new Dictionary<Vector2Int, Cell>();
 
     void Start()
@@ -79,9 +80,11 @@ public class Creator : MonoBehaviour
 
     public void NeighbourCheck(Vector2Int position)
     {
-    Cell cell = _cellsDictionary[position];
+        Cell cell = _cellsDictionary[position];
         if (cell.IsOpened) return;
         cell.Open();
+        AddOpenedCells();
+
         if (cell.NeighbourBombs == 0)
         {
             for (int x = -1; x <= 1; x++)
@@ -94,6 +97,13 @@ public class Creator : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void AddOpenedCells()
+    {
+        _openedCells++;
+        if (_openedCells == _gridSize * _gridSize - _numberOfBombs)
+            EventManager.OnWin();
     }
 
     private void Regenerate()
